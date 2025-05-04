@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishidh Jasani | Student</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Portfolio of Nishidh Jasani, Computer Science student with interests in competitive programming, web development, and data structures & algorithms">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">NJ</div>
+            <div class="nav-items">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">Profile</a>
+                <a href="#projects">Portfolio</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Nishidh Jasani</h1>
+            <h2>CS Student</h2>
+            <p class="tagline">Building skills through coding challenges</p>
+            <div class="cta-buttons">
+                <a href="#projects" class="btn primary">View My Work</a>
+                <a href="#contact" class="btn secondary">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Professional Profile</h2>
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right">
+                    <img src="image/nishidh-jasani.jpg" alt="Nishidh Jasani" class="profile-img" 
+                         style="object-position: center 20%; object-fit: cover; border-radius: 20px;"
+                         onerror="this.src='https://via.placeholder.com/350x350?text=Nishidh+Jasani'">
+                </div>
+                <div class="about-text" data-aos="fade-left">
+                    <p>
+                        Hello! I'm Nishidh Jasani, a passionate student with a keen interest in programming and web development. 
+                        I enjoy creating responsive and user-friendly interfaces and am continuously learning new technologies.
+                    </p>
+                    <p>
+                        My journey in programming started during my college years, and I've been honing my skills ever since. 
+                        I excel in competitive coding challenges and am continuously enhancing my skills in Data Structures & Algorithms.
+                        Currently, I'm also exploring AI/ML technologies to broaden my expertise.
+                    </p>
+                    <div class="contact-info">
+                        <p>
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:jasaninishidh@gmail.com" class="contact-link">jasaninishidh@gmail.com</a>
+                        </p>
+                        <p>
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/919825561050" target="_blank" rel="noopener noreferrer" class="contact-link">+91 9825561050</a>
+                        </p>
+                        <p>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <a href="https://maps.google.com/?q=Surat,+Gujarat,+India" target="_blank" rel="noopener noreferrer" class="contact-link">Surat, Gujarat, India</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Portfolio Showcase</h2>
+            <div class="project-grid">
+                <!-- Project cards will be added dynamically via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Core Competencies</h2>
+            <div class="skills-container">
+                <div class="skills-category" data-aos="fade-up">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-bars">
+                        <!-- Skills will be added dynamically via JavaScript -->
+                    </div>
+                </div>
+                <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Soft Skills</h3>
+                    <div class="soft-skills">
+                        <!-- Soft skills will be added dynamically via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <form id="contact-form" class="contact-form" data-aos="fade-up">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn primary">Send Message</button>
+            </form>
+            
+            <div class="social-links" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://github.com/NishidhJasani1605" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/NishidhJasani1605/DSA" target="_blank" rel="noopener" aria-label="DSA GitHub"><i class="fas fa-code"></i></a>
+                <a href="https://www.linkedin.com/in/nishidh-jasani-n1605" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Nishidh Jasani. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html> 
