@@ -35,25 +35,31 @@ themeToggle.addEventListener('click', () => {
 const projects = [
     {
         title: 'ClothLoop',
-        description: 'A sustainable fashion web application for recycling and reusing clothes.',
-        tech: ['HTML', 'CSS', 'JavaScript'],
+        description: 'A sustainable fashion web app built using competitive programming principles for efficient logic.',
+        tech: ['HTML', 'CSS', 'JavaScript', 'Vibe Coding'],
         github: 'https://github.com/NishidhJasani1605/ClothLoop'
     },
     {
         title: 'HRIMWellness',
-        description: 'A wellness application focused on health and wellness management.',
-        tech: ['Python', 'Flask', 'HTML/CSS'],
+        description: 'A wellness app focused on health management, developed with a competitive coding mindset.',
+        tech: ['Python', 'Flask', 'HTML/CSS', 'Vibe Coding'],
         github: 'https://github.com/NishidhJasani1605/HRIMWellness'
     },
     {
         title: 'DataVizPro',
-        description: 'A powerful web-based data visualization tool that automates the process of creating meaningful visualizations with AI-powered recommendations.',
-        tech: ['React.js', 'Node.js', 'MongoDB', 'Chart.js'],
+        description: 'Collaboration on a powerful data visualization tool, applying competitive coding techniques.',
+        tech: ['React.js', 'Node.js', 'MongoDB', 'Vibe Coding'],
         github: 'https://github.com/aaditya-desai1/DataVizPro'
     },
     {
+        title: 'My Portfolio Website',
+        description: 'This portfolio website itself, showcasing my projects and skills, also built using vibe coding.',
+        tech: ['HTML', 'CSS', 'JavaScript', 'Vibe Coding'],
+        github: 'https://github.com/NishidhJasani1605/My_Portfolio'
+    },
+    {
         title: 'DSA Learning Path',
-        description: 'My journey through Data Structures & Algorithms with implementations and competitive coding solutions.',
+        description: 'My journey through Data Structures & Algorithms, focusing on fundamental concepts (not vibe coding).',
         tech: ['C++', 'Java', 'DSA', 'Algorithms'],
         github: 'https://github.com/NishidhJasani1605/DSA'
     }
@@ -61,15 +67,11 @@ const projects = [
 
 // Technical skills data
 const technicalSkills = [
+    { name: 'Competitive Coding', level: 85 },
+    { name: 'Data Structures & Algorithms', level: 82 },
     { name: 'HTML/CSS', level: 90 },
     { name: 'JavaScript', level: 88 },
-    { name: 'React.js', level: 85 },
     { name: 'Python', level: 80 },
-    { name: 'Node.js', level: 78 },
-    { name: 'Data Structures & Algorithms', level: 82 },
-    { name: 'Competitive Coding', level: 85 },
-    { name: 'MongoDB', level: 75 },
-    { name: 'Flask', level: 72 },
     { name: 'AI/ML Basics', level: 70 },
     { name: 'Responsive Design', level: 85 }
 ];
@@ -98,7 +100,7 @@ function populateProjects() {
         
         projectCard.innerHTML = `
             <div class="project-info">
-                <h3>${project.title}</h3>
+                <h3 class="project-title">${project.title}</h3>
                 <p>${project.description}</p>
                 <div class="tech-stack">
                     ${project.tech.map(tech => `<span>${tech}</span>`).join('')}
@@ -367,23 +369,31 @@ const contactForm = document.getElementById('contact-form');
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
-    // Here you would typically handle the form submission
-    // For now, we'll just show a success message
-    const formData = new FormData(contactForm);
-    console.log('Form submitted:', Object.fromEntries(formData));
-    
-    // Add animation to form submission
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     const originalText = submitBtn.textContent;
     
-    submitBtn.disabled = true;
     submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
     
+    // Get form data
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    // Create mailto URL with form data
+    const subject = `Portfolio Contact: ${name}`;
+    const body = `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`;
+    const mailtoUrl = `mailto:nishidhjasani1605@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    
+    // Open email client with pre-filled information
+    window.location.href = mailtoUrl;
+    
+    // Reset form after short delay (simulate sending)
     setTimeout(() => {
         submitBtn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         
         setTimeout(() => {
-            submitBtn.textContent = originalText;
+            submitBtn.innerHTML = originalText;
             submitBtn.disabled = false;
             contactForm.reset();
         }, 2000);
